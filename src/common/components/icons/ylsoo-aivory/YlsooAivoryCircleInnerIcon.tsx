@@ -3,7 +3,7 @@ import * as React from 'react';
 import { SvgIcon, SvgIconProps } from '@mui/joy';
 
 
-export function BigAgiCircleInnerIcon(props: { outerColor: string, compensateThinline?: boolean } & SvgIconProps) {
+export function YlsooAivoryCircleInnerIcon(props: { outerColor: string, compensateThinline?: boolean } & SvgIconProps) {
   const { outerColor, compensateThinline, ...rest } = props;
   return (
     <SvgIcon viewBox='0 0 24 24' width='24' height='24' {...rest}>

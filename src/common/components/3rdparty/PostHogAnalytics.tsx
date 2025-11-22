@@ -51,7 +51,7 @@ export function posthogUser(userId: string, userProperties?: Record<string, any>
  * PostHog Analytics implementation - with dynamic loading
  * follows latest PostHog best practices: https://posthog.com/docs/libraries/next-js?tab=Pages+router
  *
- * This is an optional component in Big-AGI, available to anyone that wants to use PostHog.
+ * This is an optional component in Ylsoo Aivory, available to anyone that wants to use PostHog.
  *
  * To enable it, you must set the 'NEXT_PUBLIC_POSTHOG_KEY' environment variable at build time.
  *

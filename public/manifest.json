@@ -1,6 +1,6 @@
 {
-  "name": "big-AGI",
-  "short_name": "big-AGI",
+  "name": "Ylsoo Aivory",
+  "short_name": "Ylsoo Aivory",
   "theme_color": "#32383E",
   "background_color": "#9FA6AD",
   "description": "Your Generative AI Suite",
@@ -37,7 +37,7 @@
     {
       "action": "/link/share_target",
       "accept": {
-        "application/big-agi": [
+        "application/Ylsoo Aivory": [
           ".agi",
           ".agi.json"
         ]

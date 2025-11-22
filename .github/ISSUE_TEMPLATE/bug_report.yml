@@ -12,7 +12,7 @@ body:
       label: Environment
       description: (required) Where are you experiencing this issue?
       options:
-        - Big-AGI Pro (big-agi.com)
+        - Ylsoo Aivory Pro (ylsoo-aivory.com)
         - Self-deployed from GitHub
         - Docker container (specify in description)
         - Local development

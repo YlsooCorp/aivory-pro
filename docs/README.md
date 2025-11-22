@@ -1,8 +1,8 @@
-# Big-AGI Documentation
+# Ylsoo Aivory Documentation
 
-Information you need to get started, configure, and use big-AGI productively.
+Information you need to get started, configure, and use Ylsoo Aivory productively.
 
-👉 **[Changelog](https://big-agi.com/changes)** - See what's new
+👉 **[Changelog](https://ylsoo-aivory.com/changes)** - See what's new
 
 ## Getting Started
 
@@ -13,9 +13,9 @@ Essential guides:
 
 ## AI Services
 
-How to set up AI models and features in big-AGI.
+How to set up AI models and features in Ylsoo Aivory.
 
-> 👉 The following applies to users of big-AGI.com, as the public instance is empty and requires user configuration.
+> 👉 The following applies to users of ylsoo-aivory.com, as the public instance is empty and requires user configuration.
 
 - **Cloud AI Services**:
   - Easy API key configuration:
@@ -47,12 +47,12 @@ How to set up AI models and features in big-AGI.
 
 ## Deployment & Customization
 
-> 👉 The following applies to developers and experts who deploy their own big-AGI instance.
+> 👉 The following applies to developers and experts who deploy their own Ylsoo Aivory instance.
 
-For deploying a custom big-AGI instance:
+For deploying a custom Ylsoo Aivory instance:
 
 - **[Installation Guide](installation.md)**, including:
-  - Set up your own big-AGI instance
+  - Set up your own Ylsoo Aivory instance
   - Source build or pre-built options
   - Local, cloud, or on-premises deployment
 
@@ -66,8 +66,8 @@ For deploying a custom big-AGI instance:
 
 ## Community & Support
 
-- Check the [changelog](https://big-agi.com/changes) for the latest updates
-- Visit our [GitHub repository](https://github.com/enricoros/big-AGI) for source code and issue tracking
+- Check the [changelog](https://ylsoo-aivory.com/changes) for the latest updates
+- Visit our [GitHub repository](https://github.com/enricoros/ylsoo-aivory) for source code and issue tracking
 - Join our [Discord](https://discord.gg/MkH4qj2Jp9) for discussions and help
 
 Let's build something great.

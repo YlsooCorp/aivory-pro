@@ -1,15 +1,15 @@
 # Frequently Asked Questions
 
-Quick answers to common questions about Big-AGI. For detailed documentation, see our [Website Docs](https://big-agi.com/docs).
+Quick answers to common questions about Ylsoo Aivory. For detailed documentation, see our [Website Docs](https://ylsoo-aivory.com/docs).
 
 ### Versions
 
 <details open>
-<summary><b>How do I check my Big-AGI version?</b></summary>
+<summary><b>How do I check my Ylsoo Aivory version?</b></summary>
 
 You can see the version in the _News_ section of the app, as per the image below.
 
-![Version location in Big-AGI](https://github.com/user-attachments/assets/cd295094-0114-420f-a5b9-0d762e59b506)
+![Version location in Ylsoo Aivory](https://github.com/user-attachments/assets/cd295094-0114-420f-a5b9-0d762e59b506)
 </details>
 
 <details open>
@@ -25,4 +25,4 @@ Each deployment links directly to its source code commit.
 
 ---
 
-Missing something? [Open an issue](https://github.com/enricoros/big-agi/issues/new) or [join our Discord](https://discord.gg/MkH4qj2Jp9).
+Missing something? [Open an issue](https://github.com/enricoros/ylsoo-aivory/issues/new) or [join our Discord](https://discord.gg/MkH4qj2Jp9).

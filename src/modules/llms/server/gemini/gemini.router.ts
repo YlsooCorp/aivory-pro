@@ -25,7 +25,7 @@ export function geminiAccess(access: GeminiAccessSchema, modelRefId: string | nu
   const geminiHost = fixupHost(access.geminiHost || DEFAULT_GEMINI_HOST, apiPath);
   let geminiKey = access.geminiKey || env.GEMINI_API_KEY || '';
 
-  // multi-key with random selection - https://github.com/enricoros/big-AGI/issues/653
+  // multi-key with random selection - https://github.com/enricoros/ylsoo-aivory/issues/653
   if (geminiKey.includes(',')) {
     const multiKeys = geminiKey
       .split(',')
@@ -48,7 +48,7 @@ export function geminiAccess(access: GeminiAccessSchema, modelRefId: string | nu
   return {
     headers: {
       'Content-Type': 'application/json',
-      'x-goog-api-client': `big-agi/${packageJson['version'] || '1.0.0'}`,
+      'x-goog-api-client': `Ylsoo Aivory/${packageJson['version'] || '1.0.0'}`,
       'x-goog-api-key': geminiKey,
     },
     url: geminiHost + apiPath,

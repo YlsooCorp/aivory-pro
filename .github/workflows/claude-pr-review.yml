@@ -54,7 +54,7 @@ jobs:
 
             Please review this pull request and provide feedback on:
             - Potential bugs or issues
-            - Adherence to Big-AGI architecture and design patterns
+            - Adherence to Ylsoo Aivory architecture and design patterns
             - Code quality and best practices, including TypeScript types, error handling, and edge cases
             - Performance considerations: bundle size, React patterns, streaming efficiency
             - Security concerns if applicable

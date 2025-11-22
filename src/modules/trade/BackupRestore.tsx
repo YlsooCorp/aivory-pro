@@ -20,7 +20,7 @@ import { capitalizeFirstLetter } from '~/common/util/textUtils';
 
 
 // configuration
-const BACKUP_FILE_FORMAT = 'Big-AGI Flash File';
+const BACKUP_FILE_FORMAT = 'Ylsoo Aivory Flash File';
 const BACKUP_FORMAT_VERSION = '1.2';
 const BACKUP_FORMAT_VERSION_NUMBER = 102000;
 const WINDOW_RELOAD_DELAY = 300;
@@ -28,7 +28,7 @@ const EXCLUDED_LOCAL_STORAGE_KEYS = [
   'agi-logger-log', // the log cannot be restored as it's in-mem and being persisted while this is running
 ];
 const EXCLUDED_IDB_DATABASES = [
-  'Big-AGI', // exclude DBlobs IDB
+  'Ylsoo Aivory', // exclude DBlobs IDB
 ];
 const INCLUDED_IDB_KEYS: { [dbName: string]: { [storeName: string]: string[]; }; } = {
   'keyval-store': { 'keyval': ['app-chats'] }, // include ONLY the chats IDB
@@ -274,7 +274,7 @@ async function restoreIndexedDB(allDbData: Record<string, any>): Promise<void> {
   // expected local DBs to restore over, from the latest `main` (was: `v2-dev`, 2025-05-14)
   const dbTargetVersions: { [dbName: string]: number } = {
     'keyval-store': 1,
-    'Big-AGI': 10, // Dexie multiplied the version (1) by 10 (https://github.com/dexie/Dexie.js/issues/59)
+    'Ylsoo Aivory': 10, // Dexie multiplied the version (1) by 10 (https://github.com/dexie/Dexie.js/issues/59)
   };
 
   // process each database in sequence
@@ -301,7 +301,7 @@ async function restoreIndexedDB(allDbData: Record<string, any>): Promise<void> {
                 db.createObjectStore('keyval');
                 logger.info(`Created keyval object store in keyval-store database`);
               }
-            } else if (dbName === 'Big-AGI') {
+            } else if (dbName === 'Ylsoo Aivory') {
               // Create the largeAssets object store with all its indices if it doesn't exist
               if (!db.objectStoreNames.contains('largeAssets')) {
                 const largeAssetsStore = db.createObjectStore('largeAssets', { keyPath: 'id' });
@@ -315,7 +315,7 @@ async function restoreIndexedDB(allDbData: Record<string, any>): Promise<void> {
                 largeAssetsStore.createIndex('origin.source', 'origin.source');
                 largeAssetsStore.createIndex('createdAt', 'createdAt');
                 largeAssetsStore.createIndex('updatedAt', 'updatedAt');
-                logger.info(`Created largeAssets object store with all indices in Big-AGI database`);
+                logger.info(`Created largeAssets object store with all indices in Ylsoo Aivory database`);
               }
             } else {
               // For any unknown database, try to create the object stores that are in the backup
@@ -565,7 +565,7 @@ async function saveFlashObjectOrThrow(backupType: 'full' | 'auto-before-restore'
 //           controller.enqueue(encoder.encode(`  "metadata": ${JSON.stringify({
 //             version: BACKUP_FORMAT_VERSION,
 //             timestamp: new Date().toISOString(),
-//             application: 'Big-AGI',
+//             application: 'Ylsoo Aivory',
 //             backupType,
 //           }, null, spacesForMobile).replace(/^/gm, '  ')},\n`));
 //
@@ -637,7 +637,7 @@ async function createFlashObject(backupType: 'full' | 'auto-before-restore', ign
     metadata: {
       version: BACKUP_FORMAT_VERSION,
       timestamp: new Date().toISOString(),
-      application: 'Big-AGI',
+      application: 'Ylsoo Aivory',
       backupType,
     },
     storage: {
@@ -649,7 +649,7 @@ async function createFlashObject(backupType: 'full' | 'auto-before-restore', ign
 
 
 /**
- * Backup and Restore (Flashing) functionality for Big-AGI client-side data.
+ * Backup and Restore (Flashing) functionality for Ylsoo Aivory client-side data.
  * Saves and fully restores localStorage and IndexedDB data.
  */
 export function FlashRestore(props: { unlockRestore?: boolean }) {
@@ -718,10 +718,10 @@ export function FlashRestore(props: { unlockRestore?: boolean }) {
         logger.warn('User selected invalid backup file format', { data: { hasMetadata: !!data?.metadata, hasStorage: !!data?.storage } }, undefined, { skipReporting: true });
         return;
       }
-      if (data.metadata.application !== 'Big-AGI') {
+      if (data.metadata.application !== 'Ylsoo Aivory') {
         // User selected incompatible file - this is expected, not a system error
         setRestoreState('error');
-        setErrorMessage(`Incompatible Flash file. Found application "${data.metadata.application}" but expected "Big-AGI".`);
+        setErrorMessage(`Incompatible Flash file. Found application "${data.metadata.application}" but expected "Ylsoo Aivory".`);
         logger.warn('User selected incompatible backup file', { application: data.metadata.application }, undefined, { skipReporting: true });
         return;
       }
@@ -730,7 +730,7 @@ export function FlashRestore(props: { unlockRestore?: boolean }) {
       const currentSchemaVersion = BACKUP_FORMAT_VERSION_NUMBER;
       const backupSchemaVersion = data.schemaVersion || 0;
       if (backupSchemaVersion > currentSchemaVersion)
-        setSchemaVersionWarning(`WARNING: You are restoring from an newer Big-AGI version to this one. This is a DOWNGRADE and may cause data loss or application errors.`);
+        setSchemaVersionWarning(`WARNING: You are restoring from an newer Ylsoo Aivory version to this one. This is a DOWNGRADE and may cause data loss or application errors.`);
       else {
         // Check for tenant slug mismatch
         const currentTenantSlug = Release.TenantSlug;
@@ -766,7 +766,7 @@ export function FlashRestore(props: { unlockRestore?: boolean }) {
       //     'auto-before-restore',
       //     true, // auto-backup with streaming
       //     false, // auto-backup without images
-      //     `Big-AGI-auto-pre-flash-${dateStr}.json`,
+      //     `Ylsoo Aivory-auto-pre-flash-${dateStr}.json`,
       //   );
       //   logger.info('Created auto-backup before restore');
       // } catch (error: any) {
@@ -987,7 +987,7 @@ export function FlashBackup(props: {
         includeImages,
         includeSettings,
         true, // includeIndexedDB - full backup includes everything
-        `Big-AGI-${tradeFileVariant()}-flash${includeImages ? '+images' : ''}${includeSettings ? '' : '-nosets'}${event.ctrlKey ? '-download' : ''}-${dateStr}.json`,
+        `Ylsoo Aivory-${tradeFileVariant()}-flash${includeImages ? '+images' : ''}${includeSettings ? '' : '-nosets'}${event.ctrlKey ? '-download' : ''}-${dateStr}.json`,
       );
       setBackupState(success ? 'success' : 'idle');
     } catch (error: any) {

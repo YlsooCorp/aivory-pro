@@ -38,7 +38,7 @@ const undoPanelGroupSx: React.CSSProperties = {
 
 
 /**
- * Core layout of big-AGI, used by all the Primary applications therein.
+ * Core layout of Ylsoo Aivory, used by all the Primary applications therein.
  *
  * Main functions:
  *  - modern responsive layout

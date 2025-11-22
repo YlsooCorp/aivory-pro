@@ -12,7 +12,7 @@ name: Create and publish Docker images
 on:
   push:
     branches:
-      - main          # Primary branch (Big-AGI Open)
+      - main          # Primary branch (Ylsoo Aivory Open)
     tags:
       - 'v2.*'        # Stable releases (v2.0.0, v2.1.0, etc.)
 
@@ -67,10 +67,10 @@ jobs:
             type=ref,event=tag
             type=semver,pattern={{version}}
           labels: |
-            org.opencontainers.image.title=Big-AGI Open
-            org.opencontainers.image.description=Big-AGI Open - Multi-model AI workspace for experts who need to think broader, decide smarter, and build with confidence.
+            org.opencontainers.image.title=Ylsoo Aivory Open
+            org.opencontainers.image.description=Ylsoo Aivory Open - Multi-model AI workspace for experts who need to think broader, decide smarter, and build with confidence.
             org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
-            org.opencontainers.image.documentation=https://big-agi.com
+            org.opencontainers.image.documentation=https://ylsoo-aivory.com
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
