@@ -12,7 +12,7 @@ import { optimaHasMOTD, OptimaMOTD } from '~/common/layout/optima/OptimaMOTD';
 
 
 const pageCoreSx: SxProps = {
-  // background: 'url(/images/big-agi-background-3.png) no-repeat center bottom fixed',
+  // background: 'url(/images/Ylsoo Aivory-background-3.png) no-repeat center bottom fixed',
   backgroundColor: themeBgApp,
   height: '100dvh',
   display: 'flex', flexDirection: 'column',

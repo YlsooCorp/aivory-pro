@@ -13,7 +13,7 @@ npm run lint                          # Lint entire project
 
 ## Architecture Overview
 
-Big-AGI is a Next.js 15 application with a modular architecture built for advanced AI interactions. The codebase follows a three-layer structure with distinct separation of concerns.
+Ylsoo Aivory is a Next.js 15 application with a modular architecture built for advanced AI interactions. The codebase follows a three-layer structure with distinct separation of concerns.
 
 ### Core Directory Structure
 
@@ -84,7 +84,7 @@ Modules in `/src/modules/` provide reusable business logic:
 
 ### Storage System
 
-Big-AGI uses a local-first architecture with Zustand + IndexedDB:
+Ylsoo Aivory uses a local-first architecture with Zustand + IndexedDB:
 - **Zustand** stores for in-memory state management
 - **localStorage** for persistent settings/all storage (via Zustand persist middleware)
 - **IndexedDB** for persistent chat-only storage (via Zustand persist middleware) on a single key-val cell

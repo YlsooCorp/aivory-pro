@@ -7,7 +7,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 
-import { BigAgiSquircleIcon } from '~/common/components/icons/big-agi/BigAgiSquircleIcon';
+import { YlsooAivorySquircleIcon } from '~/common/components/icons/ylsoo-aivory/YlsooAivorySquircleIcon';
 import { Brand } from '~/common/app.config';
 import { LayoutSidebarRight } from '~/common/components/icons/LayoutSidebarRight';
 import { Link } from '~/common/components/Link';
@@ -61,7 +61,7 @@ function CenterItemsFallback(props: { currentApp?: NavItemApp }) {
 
     {/* Squircle */}
     <Link href={ROUTE_INDEX}>
-      <BigAgiSquircleIcon inverted sx={{ width: 32, height: 32, color: 'white' }} />
+      <YlsooAivorySquircleIcon inverted sx={{ width: 32, height: 32, color: 'white' }} />
     </Link>
 
     {/* Title */}

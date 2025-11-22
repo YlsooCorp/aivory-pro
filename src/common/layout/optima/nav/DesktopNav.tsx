@@ -16,7 +16,7 @@ import { blocksRenderHTMLIFrameCss } from '~/modules/blocks/code/code-renderers/
 import { BuildInfoCard } from '../../../../apps/news/AppNews';
 
 import { BaseProduct } from '~/common/app.release';
-import { BigAgiSquircleIcon } from '~/common/components/icons/big-agi/BigAgiSquircleIcon';
+import { YlsooAivorySquircleIcon } from '~/common/components/icons/ylsoo-aivory/YlsooAivorySquircleIcon';
 import { FeatureBadge } from '~/common/components/FeatureBadge';
 import { GoodModal } from '~/common/components/modals/GoodModal';
 import { PhSquaresFour } from '~/common/components/icons/phosphor/PhSquaresFour';
@@ -33,7 +33,7 @@ import { optimaActions, optimaOpenModels, optimaOpenPreferences, optimaToggleDra
 import { scratchClipSupported, useScratchClipVisibility } from '../scratchclip/store-scratchclip';
 
 
-export const bigAgiProUrl = 'https://big-agi.com' + clientUtmSource('upgrade-apps');
+export const ylsooAivoryProUrl = 'https://ylsoo-aivory.com' + clientUtmSource('upgrade-apps');
 
 
 const desktopNavBarSx: SxProps = {
@@ -170,10 +170,10 @@ export function DesktopNav(props: { component: React.ElementType, currentApp?: N
           sx={{ minWidth: 260 }}
         >
 
-          <MenuItem component='a' variant='solid' color='primary' href={bigAgiProUrl} target='_blank' sx={{ minHeight: 40 }}>
+          <MenuItem component='a' variant='solid' color='primary' href={ylsooAivoryProUrl} target='_blank' sx={{ minHeight: 40 }}>
             {/*<ListItemDecorator>New</ListItemDecorator>*/}
             {/*<ListItemDecorator><RocketLaunchRounded /></ListItemDecorator>*/}
-            Big-AGI Pro
+            Ylsoo Aivory Pro
             {/*✨*/}
             <ArrowOutwardRoundedIcon sx={{ ml: 'auto' }}/>
           </MenuItem>
@@ -225,7 +225,7 @@ export function DesktopNav(props: { component: React.ElementType, currentApp?: N
           <MenuItem component='a' href={BaseProduct.SupportForm()} target='_blank'>
             <ListItemDecorator>🔥</ListItemDecorator>
             <div>
-              Improve Big-AGI
+              Improve Ylsoo Aivory
               <FormHelperText>AI fixes what you report</FormHelperText>
             </div>
             <ArrowOutwardRoundedIcon sx={{ ml: 'auto' }} />
@@ -321,7 +321,7 @@ export function DesktopNav(props: { component: React.ElementType, currentApp?: N
             onPointerDown={logoButtonTogglesPane ? optimaToggleDrawer : undefined}
             className={navItemClasses.typeMenu}
           >
-            {logoButtonTogglesPane ? (isDrawerPeeking ? <PushPinOutlinedIcon sx={{ fontSize: 'xl', transform: 'rotate(45deg)' }} /> : <MenuIcon />) : <BigAgiSquircleIcon inverted sx={{ color: 'white' }} />}
+            {logoButtonTogglesPane ? (isDrawerPeeking ? <PushPinOutlinedIcon sx={{ fontSize: 'xl', transform: 'rotate(45deg)' }} /> : <MenuIcon />) : <YlsooAivorySquircleIcon inverted sx={{ color: 'white' }} />}
           </DesktopNavIcon>
         </Tooltip>
       </InvertedBarCornerItem>

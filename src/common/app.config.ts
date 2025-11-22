@@ -8,27 +8,27 @@
  */
 export const Brand = {
   Title: {
-    Base: 'big-AGI',
-    Common: (process.env.NODE_ENV === 'development' ? '[DEV] ' : '') + 'big-AGI',
+    Base: 'Ylsoo Aivory',
+    Common: (process.env.NODE_ENV === 'development' ? '[DEV] ' : '') + 'Ylsoo Aivory',
   },
   Meta: {
-    Description: 'Launch big-AGI to unlock the full potential of AI, with precise control over your data and models. Voice interface, AI personas, advanced features, and fun UX.',
-    SiteName: 'big-AGI | Precision AI for You',
+    Description: 'Launch Ylsoo Aivory to unlock the full potential of AI, with precise control over your data and models. Voice interface, AI personas, advanced features, and fun UX.',
+    SiteName: 'Ylsoo Aivory | Precision AI for You',
     ThemeColor: '#32383E',
     TwitterSite: '@enricoros',
   },
   URIs: {
-    Home: 'https://big-agi.com',
-    // App: 'https://get.big-agi.com',
-    CardImage: 'https://big-agi.com/icons/card-dark-1200.png',
-    OpenRepo: 'https://github.com/enricoros/big-agi',
+    Home: 'https://ylsoo-aivory.com',
+    // App: 'https://get.ylsoo-aivory.com',
+    CardImage: 'https://ylsoo-aivory.com/icons/card-dark-1200.png',
+    OpenRepo: 'https://github.com/enricoros/ylsoo-aivory',
     OpenProject: 'https://github.com/users/enricoros/projects/4',
     SupportInvite: 'https://discord.gg/MkH4qj2Jp9',
     // Twitter: 'https://www.twitter.com/enricoros',
-    PrivacyPolicy: 'https://big-agi.com/privacy',
-    TermsOfService: 'https://big-agi.com/terms',
+    PrivacyPolicy: 'https://ylsoo-aivory.com/privacy',
+    TermsOfService: 'https://ylsoo-aivory.com/terms',
   },
   Docs: {
-    Public: (docPage: string) => `https://big-agi.com/docs/${docPage}`,
+    Public: (docPage: string) => `https://ylsoo-aivory.com/docs/${docPage}`,
   }
 } as const;

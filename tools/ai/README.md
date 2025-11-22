@@ -8,7 +8,7 @@ Claude Code.
 
 ```bash
 # Run this from the ROOT of your git repository
-curl -fsSL https://raw.githubusercontent.com/enricoros/big-AGI/main/tools/ai/repo-structure.sh | sh
+curl -fsSL https://raw.githubusercontent.com/enricoros/ylsoo-aivory/main/tools/ai/repo-structure.sh | sh
 ```
 
 ## Options
@@ -19,7 +19,7 @@ curl -fsSL https://raw.githubusercontent.com/enricoros/big-AGI/main/tools/ai/rep
 
 Example with options (include hidden files):
 
-- `curl -fsSL https://raw.githubusercontent.com/enricoros/big-AGI/main/tools/ai/repo-structure.sh | sh -s -- -a`
+- `curl -fsSL https://raw.githubusercontent.com/enricoros/ylsoo-aivory/main/tools/ai/repo-structure.sh | sh -s -- -a`
 
 ## Requirements
 

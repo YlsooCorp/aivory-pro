@@ -91,7 +91,7 @@ function WebInputModal(props: {
     const cleanUrls = links.reduce((acc, { url, ...linkRest }) => {
       const trimmed = (url || '').trim();
       if (trimmed) {
-        // this form uses a 'relaxed' URL validation, meaning one can write 'big-agi.com' and we'll assume https://
+        // this form uses a 'relaxed' URL validation, meaning one can write 'ylsoo-aivory.com' and we'll assume https://
         const relaxedUrl = asValidURL(trimmed, true);
         if (relaxedUrl)
           acc.push({ url: relaxedUrl, ...linkRest });

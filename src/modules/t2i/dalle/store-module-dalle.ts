@@ -33,8 +33,8 @@ export function resolveDalleModelId(selection: DalleModelSelection): DalleModelI
  * @param modelId - The specific model ID
  * @returns The model family identifier
  *
- * Future: When adding Google Imagen, xAI, or big-agi hosted models:
- * - Add new return types: 'google-imagen' | 'xai-grok-image' | 'bigagi-hosted'
+ * Future: When adding Google Imagen, xAI, or Ylsoo Aivory hosted models:
+ * - Add new return types: 'google-imagen' | 'xai-grok-image' | 'Ylsoo Aivory-hosted'
  * - Update all family-based checks to handle new families
  * - Each family can have its own settings/pricing structure
  */

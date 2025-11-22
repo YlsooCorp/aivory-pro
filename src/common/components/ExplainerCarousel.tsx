@@ -9,7 +9,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 import { ScaledTextBlockRenderer } from '~/modules/blocks/ScaledTextBlockRenderer';
 
-import { BigAgiSquircleIcon } from '~/common/components/icons/big-agi/BigAgiSquircleIcon';
+import { YlsooAivorySquircleIcon } from '~/common/components/icons/ylsoo-aivory/YlsooAivorySquircleIcon';
 import { ChatBeamIcon } from '~/common/components/icons/ChatBeamIcon';
 import { ShortcutKey, useGlobalShortcuts } from '~/common/components/shortcuts/useGlobalShortcuts';
 import { animationTextShadowLimey } from '~/common/util/animUtils';
@@ -198,7 +198,7 @@ export function ExplainerCarousel(props: {
           whiteSpace: 'balance',
         }}>
         {activeStep?.titlePrefix}{' '}
-        {!!activeStep?.titleSquircle && <BigAgiSquircleIcon inverted sx={{ color: 'white', fontSize: isMobile ? '1.55rem' : '2.04rem', borderRadius: 'md' }} />}
+        {!!activeStep?.titleSquircle && <YlsooAivorySquircleIcon inverted sx={{ color: 'white', fontSize: isMobile ? '1.55rem' : '2.04rem', borderRadius: 'md' }} />}
         {!!activeStep?.titleSquircle && '-'}
         {!!activeStep?.titleSpark && <Box component='span' sx={{
           fontWeight: 'lg',

@@ -287,7 +287,7 @@ const _knownGeminiModels: ({
 
   // 2.5 Pro-Based: Gemini Computer Use Preview - Released October 7, 2025
   // IMPORTANT: This model requires CLIENT-SIDE browser automation implementation
-  // - Big-AGI (web-only) cannot execute Computer Use actions (screenshots, clicks, typing)
+  // - Ylsoo Aivory (web-only) cannot execute Computer Use actions (screenshots, clicks, typing)
   // - Users must implement external client-side code to:
   //   1. Capture screenshots and send to model
   //   2. Receive function_call responses (click_at, type_text_at, etc.)
@@ -307,7 +307,7 @@ const _knownGeminiModels: ({
       { paramId: 'llmVndGeminiComputerUse' }, // Sets environment=ENVIRONMENT_BROWSER in Computer Use tool
     ],
     benchmark: undefined, // Computer use model, not benchmarkable on standard tests
-    hidden: true, // Hidden: requires external client-side implementation not available in Big-AGI
+    hidden: true, // Hidden: requires external client-side implementation not available in Ylsoo Aivory
   },
 
   // 2.5 Flash-Based: Gemini Robotics-ER 1.5 Preview - Released September 25, 2025

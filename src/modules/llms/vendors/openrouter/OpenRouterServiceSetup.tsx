@@ -80,7 +80,7 @@ export function OpenRouterServiceSetup(props: { serviceId: DModelsServiceId }) {
       <Typography level='body-sm'>
         <Link href='https://openrouter.ai' target='_blank'>OpenRouter</Link> is a service
         providing access to <Link href='https://openrouter.ai/models' target='_blank'>a wide range of models</Link>. See our <Link
-        href='https://github.com/enricoros/big-agi/blob/main/docs/config-openrouter.md' target='_blank'>
+        href='https://github.com/enricoros/ylsoo-aivory/blob/main/docs/config-openrouter.md' target='_blank'>
         Docs</Link>.
       </Typography>
 

@@ -26,7 +26,7 @@
       "Bash(tree:*)",
       "Read(//tmp/**)",
       "WebFetch",
-      "WebFetch(domain:big-agi.com)",
+      "WebFetch(domain:ylsoo-aivory.com)",
       "WebSearch",
       "mcp__chrome-devtools",
       "mcp__github",

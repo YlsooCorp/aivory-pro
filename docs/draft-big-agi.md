@@ -1,5 +1,5 @@
-# Why big-AGI?
-Placeholder for a document that demonstrates the productivity and unique features of Big-AGI.
+# Why Ylsoo Aivory?
+Placeholder for a document that demonstrates the productivity and unique features of Ylsoo Aivory.
 
 ## Exclusive features
 - [x] Call AGI

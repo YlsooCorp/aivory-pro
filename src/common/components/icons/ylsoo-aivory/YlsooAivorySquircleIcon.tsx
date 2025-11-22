@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { SvgIcon, SvgIconProps } from '@mui/joy';
 
-export function BigAgiSquircleIcon(props: { inverted?: boolean, altColor?: string } & SvgIconProps) {
+export function YlsooAivorySquircleIcon(props: { inverted?: boolean, altColor?: string } & SvgIconProps) {
   const { inverted, altColor, ...rest } = props;
   return <SvgIcon
     titleAccess='logo mark'
