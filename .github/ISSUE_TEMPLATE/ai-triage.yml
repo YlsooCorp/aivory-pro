@@ -1,11 +1,11 @@
 name: 🔥 Make AI Fix This
-description: Bug, question, or feedback - AI analyzes and changes Big-AGI appropriately
+description: Bug, question, or feedback - AI analyzes and changes Ylsoo Aivory appropriately
 labels: [ 'claude-triage' ]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for opening an issue! Our AI will analyze it and change Big-AGI appropriately.
+        Thanks for opening an issue! Our AI will analyze it and change Ylsoo Aivory appropriately.
 
         **What happens next:**
         - AI searches the codebase and documentation
@@ -28,7 +28,7 @@ body:
       label: Where does this happen?
       description: If this is a bug or issue, where are you experiencing it?
       options:
-        - Big-AGI Pro (big-agi.com)
+        - Ylsoo Aivory Pro (ylsoo-aivory.com)
         - Self-deployed from GitHub
         - Docker deployment
         - Local development
@@ -40,9 +40,9 @@ body:
   - type: dropdown
     attributes:
       label: Impact on your workflow
-      description: How does this affect your use of Big-AGI?
+      description: How does this affect your use of Ylsoo Aivory?
       options:
-        - Blocking - Can't use Big-AGI
+        - Blocking - Can't use Ylsoo Aivory
         - High - Major feature broken
         - Medium - Workaround exists
         - Low - Minor inconvenience

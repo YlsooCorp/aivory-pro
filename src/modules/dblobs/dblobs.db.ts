@@ -4,7 +4,7 @@ import type { DBlobAsset, DBlobAssetId, DBlobAssetType, DBlobDBAsset, DBlobDBCon
 
 
 /**
- * Dexie DB for Big-AGI
+ * Dexie DB for Ylsoo Aivory
  * - assets: we store large assets like images/audio/video/documents...
  *
  * [DEV NOTE] To delete the full DB (don't do it!):
@@ -14,11 +14,11 @@ import type { DBlobAsset, DBlobAssetId, DBlobAssetType, DBlobDBAsset, DBlobDBCon
  * aswe need to request persistent storage for the current origin, sot that
  * indexedDB's content is not evicted.
  */
-class BigAgiDB extends Dexie {
+class YlsooAivoryDB extends Dexie {
   largeAssets!: Dexie.Table<DBlobDBAsset, string>;
 
   constructor() {
-    super('Big-AGI');
+    super('Ylsoo Aivory');
     this.version(1).stores({
       // Index common properties (and compound indexes)
       largeAssets: 'id, [contextId+scopeId], assetType, [assetType+contextId+scopeId], data.mimeType, origin.ot, origin.source, createdAt, updatedAt',
@@ -29,11 +29,11 @@ class BigAgiDB extends Dexie {
 
 // In development mode, reuse the same instance of the DB to avoid re-creating it on every hot reload
 const globalForDexie = globalThis as unknown as {
-  bigAgiDB: BigAgiDB | undefined;
+  ylsooAivoryDB: YlsooAivoryDB | undefined;
 };
 
-const _db = globalForDexie.bigAgiDB ?? new BigAgiDB();
-if (process.env.NODE_ENV !== 'production') globalForDexie.bigAgiDB = _db;
+const _db = globalForDexie.ylsooAivoryDB ?? new YlsooAivoryDB();
+if (process.env.NODE_ENV !== 'production') globalForDexie.ylsooAivoryDB = _db;
 
 const assetsTable = _db.largeAssets;
 

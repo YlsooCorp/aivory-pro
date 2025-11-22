@@ -1,17 +1,17 @@
-# Configuring Azure OpenAI Service with `big-AGI`
+# Configuring Azure OpenAI Service with `Ylsoo Aivory`
 
 The entire procedure takes about 5 minutes and involves creating an Azure account,
-setting up the Azure OpenAI service, deploying models, and configuring `big-AGI`
+setting up the Azure OpenAI service, deploying models, and configuring `Ylsoo Aivory`
 to access these models.
 
 Please note that Azure operates on a 'pay-as-you-go' pricing model and requires
 credit card information tied to a 'subscription' to the Azure service.
 
-## Configuring `big-AGI`
+## Configuring `Ylsoo Aivory`
 
-If you have an `API Endpoint` and `API Key`, you can configure big-AGI as follows:
+If you have an `API Endpoint` and `API Key`, you can configure Ylsoo Aivory as follows:
 
-1. Launch the `big-AGI` application
+1. Launch the `Ylsoo Aivory` application
 2. Go to the **Models** settings
 3. Add a Vendor and select **Azure OpenAI**
     - Enter the Endpoint (e.g., 'https://your-resource-name.openai.azure.com')

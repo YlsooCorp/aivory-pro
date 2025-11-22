@@ -51,7 +51,7 @@ jobs:
                **Search for context**:
                - Use the repository's CLAUDE.md for high level guidance and especially kb/ documentation
                - Look in relevant code files, including kb/ documentation
-               **Use web search**: When potentially outside Big-AGI (e.g. user configuration), search the web for similar errors or related issues
+               **Use web search**: When potentially outside Ylsoo Aivory (e.g. user configuration), search the web for similar errors or related issues
                **Provide a solution**:
                - Provide multiple solutions if uncertain, and say so
                - If you can fix it in code, propose the fix

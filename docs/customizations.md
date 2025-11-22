@@ -1,6 +1,6 @@
 # Customizing and Creating Derivative Applications
 
-This document outlines how to develop applications derived from big-AGI.
+This document outlines how to develop applications derived from Ylsoo Aivory.
 
 ## Manual Customization
 
@@ -15,8 +15,8 @@ Application customization _requires manual code modifications or the use of envi
 
 ## Code Alterations
 
-Start by creating a fork of the [big-AGI repository](https://github.com/enricoros/big-AGI) on GitHub for a personal development space.
-Understand the Architecture: big-AGI uses Next.js, React for the front end, and Node.js (Next.js edge functions) for the back end.
+Start by creating a fork of the [Ylsoo Aivory repository](https://github.com/enricoros/ylsoo-aivory) on GitHub for a personal development space.
+Understand the Architecture: Ylsoo Aivory uses Next.js, React for the front end, and Node.js (Next.js edge functions) for the back end.
 
 ### Add Authentication
 
@@ -27,7 +27,7 @@ This necessitates a code change (file renaming) before build initiation, detaile
 For long-running operations, Vercel allows paid deployments to increase the timeout on Functions.
 Note that this applies to old-style Vercel Functions (based on Node.js) and not the new Edge Functions.
 
-At time of writing, big-AGI has only 2 operations that run on Node.js Functions:
+At time of writing, Ylsoo Aivory has only 2 operations that run on Node.js Functions:
 browsing (fetching web pages) and sharing. They both can exceed 10 seconds, especially
 when fetching large pages or waiting for websites to be completed.
 
@@ -69,7 +69,7 @@ Example: `NEXT_PUBLIC_MOTD=🚀 New features available in {{app_build_pkgver}}! 
 
 ## Testing & Deployment
 
-Test your application thoroughly using local development (refer to README.md for local build instructions). Deploy using your preferred hosting service. big-AGI supports deployment on platforms like Vercel, Docker, or any Node.js-compatible service, especially those supporting NextJS's "Edge Runtime."
+Test your application thoroughly using local development (refer to README.md for local build instructions). Deploy using your preferred hosting service. Ylsoo Aivory supports deployment on platforms like Vercel, Docker, or any Node.js-compatible service, especially those supporting NextJS's "Edge Runtime."
 
 - [deploy-cloudflare.md](deploy-cloudflare.md): for Cloudflare Workers deployment
 - [deploy-docker.md](deploy-docker.md): for Docker deployment instructions and examples
@@ -105,7 +105,7 @@ For public projects, update your README.md with your modifications and submit a 
 
 ## Best Practices
 
-- **Stay Updated**: Frequently merge updates from the main big-AGI repository to incorporate bug fixes and new features.
+- **Stay Updated**: Frequently merge updates from the main Ylsoo Aivory repository to incorporate bug fixes and new features.
 - **Keep It Open Source**: Consider maintaining your derivative as open source to foster community contributions.
 - **Engage with the Community**: Leverage platforms like GitHub, Discord, or Reddit for feedback, collaboration, and project promotion.
 

@@ -210,7 +210,7 @@ export function openAIImageModelsCurrentGeneratorName() {
  * Pricing data for OpenAI image models (per 1M tokens/images)
  * Source: https://platform.openai.com/docs/pricing
  *
- * TODO: When adding credit-based pricing for big-agi hosted service:
+ * TODO: When adding credit-based pricing for Ylsoo Aivory hosted service:
  * - Add 'credits' pricing type alongside 'token-based' and 'fixed'
  * - Server-side validation of user credits before generation
  * - Deduct credits after successful generation

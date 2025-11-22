@@ -8,19 +8,19 @@ import { Link } from '~/common/components/Link';
 import { clientUtmSource } from '~/common/util/pwaUtils';
 
 
-export const bigAgiProUrl = 'https://big-agi.com' + clientUtmSource('upgrade');
+export const ylsooAivoryProUrl = 'https://ylsoo-aivory.com' + clientUtmSource('upgrade');
 
-export function BigAgiProNewsCallout() {
+export function YlsooAivoryProNewsCallout() {
 
-  const bigAgiSupportUrl = 'https://form.typeform.com/to/nLf8gFmx?utm_source=big-agi-1&utm_medium=app&utm_campaign=support';
+  const ylsooAivorySupportUrl = 'https://form.typeform.com/to/nLf8gFmx?utm_source=ylsoo-aivory-1&utm_medium=app&utm_campaign=support';
 
   return (
     <Card variant='solid' color='primary' invertedColors>
       <CardContent sx={{ gap: 2 }}>
-        <Typography level='title-lg'>Big-AGI Pro ✨ - Now Live</Typography>
+        <Typography level='title-lg'>Ylsoo Aivory Pro ✨ - Now Live</Typography>
 
         <Typography level='title-sm' sx={{ lineHeight: 'xl' }}>
-          Experience the <b>next generation of Big-AGI</b> with <b>Beam 2</b>, <b>Personas</b>, and <b>Cloud Sync</b> to never lose data.
+          Experience the <b>next generation of Ylsoo Aivory</b> with <b>Beam 2</b>, <b>Personas</b>, and <b>Cloud Sync</b> to never lose data.
         </Typography>
 
         <Grid container spacing={1}>
@@ -32,11 +32,11 @@ export function BigAgiProNewsCallout() {
               color='neutral'
               endDecorator={<RocketLaunchRounded />}
               component={Link}
-              href={bigAgiProUrl}
+              href={ylsooAivoryProUrl}
               noLinkStyle
               target='_blank'
             >
-              Big-AGI Pro
+              Ylsoo Aivory Pro
             </Button>
           </Grid>
 
@@ -47,7 +47,7 @@ export function BigAgiProNewsCallout() {
               color='primary'
               endDecorator={<SupportAgentIcon />}
               component={Link}
-              href={bigAgiSupportUrl}
+              href={ylsooAivorySupportUrl}
               noLinkStyle
               target='_blank'
               disabled

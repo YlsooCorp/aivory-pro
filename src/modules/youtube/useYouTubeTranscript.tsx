@@ -1,6 +1,6 @@
 // Copyright (c) 2023-2024 Enrico Ros
 // This subsystem is responsible for fetching the transcript of a YouTube video.
-// It is used by the Big-AGI Persona Creator to create a character sheet.
+// It is used by the Ylsoo Aivory Persona Creator to create a character sheet.
 
 import * as React from 'react';
 import { useQuery } from '@tanstack/react-query';
@@ -24,7 +24,7 @@ export interface YTVideoTranscript {
 export async function youTubeGetVideoData(videoId: string): Promise<YouTubeVideoData> {
   if (USE_FRONTEND_FETCH) {
     // return fetchYouTubeTranscript(videoId, url => frontendSideFetch(url).then(res => res.text()));
-    throw new Error('Big-AGI: Browser youtube transcript download is disabled.');
+    throw new Error('Ylsoo Aivory: Browser youtube transcript download is disabled.');
   }
   return apiAsync.youtube.getTranscript.query({ videoId });
 }

@@ -2,29 +2,29 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: ns-big-agi
+  name: ns-Ylsoo Aivory
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: big-agi
-  name: deployment-big-agi
-  namespace: ns-big-agi
+    app: Ylsoo Aivory
+  name: deployment-Ylsoo Aivory
+  namespace: ns-Ylsoo Aivory
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: big-agi
+      app: Ylsoo Aivory
   strategy: {}
   template:
     metadata:
       labels:
-        app: big-agi
+        app: Ylsoo Aivory
     spec:
       containers:
-        - image: ghcr.io/enricoros/big-agi:latest
-          name: big-agi
+        - image: ghcr.io/enricoros/ylsoo-aivory:latest
+          name: Ylsoo Aivory
           ports:
             - containerPort: 3000
           args:
@@ -40,13 +40,13 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: big-agi
-  name: svc-big-agi
-  namespace: ns-big-agi
+    app: Ylsoo Aivory
+  name: svc-Ylsoo Aivory
+  namespace: ns-Ylsoo Aivory
 spec:
   ports:
     - name: "http"
       port: 3000
       targetPort: 3000
   selector:
-    app: big-agi
+    app: Ylsoo Aivory
