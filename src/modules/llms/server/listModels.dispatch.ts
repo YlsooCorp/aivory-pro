@@ -1,70 +1,23 @@
 import { TRPCError } from '@trpc/server';
 
 import type { AixAPI_Access } from '~/modules/aix/server/api/aix.wiretypes';
-
-import { LLM_IF_OAI_Chat, LLM_IF_OAI_Fn, LLM_IF_OAI_Vision } from '~/common/stores/llms/llms.types';
-
+import { GeminiWire_API_Models_List } from '~/modules/aix/server/dispatch/wiretypes/gemini.wiretypes';
 import { fetchJsonOrTRPCThrow } from '~/server/trpc/trpc.router.fetchers';
-import { serverCapitalizeFirstLetter } from '~/server/wire';
 
 import type { ModelDescriptionSchema } from './llm.server.types';
-
-
-// protocol: Anthropic
-import { AnthropicWire_API_Models_List, hardcodedAnthropicModels, hardcodedAnthropicVariants, llmsAntCreatePlaceholderModel, llmsAntDevCheckForObsoletedModels_DEV, llmsAntInjectWebSearchInterface } from './anthropic/anthropic.models';
-import { anthropicAccess } from './anthropic/anthropic.router';
-
-// protocol: Gemini
-import { GeminiWire_API_Models_List } from '~/modules/aix/server/dispatch/wiretypes/gemini.wiretypes';
 import { geminiAccess } from './gemini/gemini.router';
-import { geminiDevCheckForParserMisses_DEV, geminiDevCheckForSuperfluousModels_DEV, geminiFilterModels, geminiModelsAddVariants, geminiModelToModelDescription, geminiSortModels } from './gemini/gemini.models';
-
-// protocol: Ollama
-import { OLLAMA_BASE_MODELS } from './ollama/ollama.models';
-import { ollamaAccess } from './ollama/ollama.router';
-import { wireOllamaListModelsSchema, wireOllamaModelInfoSchema } from './ollama/ollama.wiretypes';
-
-// protocol: OpenAI-compatible
-import { OpenAIWire_API_Models_List } from '~/modules/aix/server/dispatch/wiretypes/openai.wiretypes';
-import { alibabaModelFilter, alibabaModelSort, alibabaModelToModelDescription } from './openai/models/alibaba.models';
-import { azureDeploymentFilter, azureDeploymentToModelDescription, azureParseFromDeploymentsAPI } from './openai/models/azure.models';
-import { chutesAIHeuristic, chutesAIModelsToModelDescriptions } from './openai/models/chutesai.models';
-import { deepseekModelFilter, deepseekModelSort, deepseekModelToModelDescription } from './openai/models/deepseek.models';
-import { fastAPIHeuristic, fastAPIModels } from './openai/models/fastapi.models';
-import { fireworksAIHeuristic, fireworksAIModelsToModelDescriptions } from './openai/models/fireworksai.models';
-import { groqModelFilter, groqModelSortFn, groqModelToModelDescription } from './openai/models/groq.models';
-import { lmStudioModelToModelDescription } from './openai/models/lmstudio.models';
-import { localAIModelSortFn, localAIModelToModelDescription } from './openai/models/localai.models';
-import { mistralModels } from './openai/models/mistral.models';
-import { moonshotModelFilter, moonshotModelSortFn, moonshotModelToModelDescription } from './openai/models/moonshot.models';
-import { openAIAccess } from './openai/openai.router';
-import { openPipeModelDescriptions, openPipeModelSort, openPipeModelToModelDescriptions } from './openai/models/openpipe.models';
-import { openRouterInjectVariants, openRouterModelFamilySortFn, openRouterModelToModelDescription } from './openai/models/openrouter.models';
-import { openaiDevCheckForModelsOverlap_DEV, openAIInjectVariants, openAIModelFilter, openAIModelToModelDescription, openAISortModels } from './openai/models/openai.models';
-import { perplexityHardcodedModelDescriptions, perplexityInjectVariants } from './openai/models/perplexity.models';
-import { togetherAIModelsToModelDescriptions } from './openai/models/together.models';
-import { xaiFetchModelDescriptions, xaiModelSort } from './openai/models/xai.models';
-
-
-// -- Dispatch types --
-
-export type ListModelsDispatch<TWireModels = any> = {
-  fetchModels: () => Promise<TWireModels>;
-  convertToDescriptions: (wireModels: TWireModels) => ModelDescriptionSchema[];
-};
-
-/**
- * Helper to create a dispatch with proper type inference.
- * TypeScript will infer TWireModels from fetchModels return type and enforce it in convertToDescriptions.
- */
-function createDispatch<T>(dispatch: ListModelsDispatch<T>): ListModelsDispatch<T> {
-  return dispatch;
-}
-
-
-// -- Specialized Implementations -- Core of Server-side LLM Model Listing abstraction --
+import {
+  geminiDevCheckForParserMisses_DEV,
+  geminiDevCheckForSuperfluousModels_DEV,
+  geminiFilterModels,
+  geminiModelToModelDescription,
+  geminiModelsAddVariants,
+  geminiSortModels,
+} from './gemini/gemini.models';
 
 export async function listModelsRunDispatch(access: AixAPI_Access, signal?: AbortSignal): Promise<ModelDescriptionSchema[]> {
+  if (access.dialect !== 'gemini')
+    throw new TRPCError({ code: 'BAD_REQUEST', message: `Unsupported dialect: ${access.dialect}` });
   const dispatch = _listModelsCreateDispatch(access, signal);
   const wireModels = await dispatch.fetchModels();
   return dispatch.convertToDescriptions(wireModels);
@@ -397,29 +350,18 @@ function _listModelsCreateDispatch(access: AixAPI_Access, signal?: AbortSignal):
               openaiDevCheckForModelsOverlap_DEV(maybeModels, models);
               return models;
 
-            case 'openpipe':
-              return [
-                ...maybeModels.map(openPipeModelToModelDescriptions),
-                ...openPipeModelDescriptions().sort(openPipeModelSort),
-              ];
+  const { headers, url } = geminiAccess(access, null, GeminiWire_API_Models_List.getPath, false);
+  const wireModels = await fetchJsonOrTRPCThrow({ url, headers, name: 'Gemini', signal });
+  const detailedModels = GeminiWire_API_Models_List.Response_schema.parse(wireModels).models;
 
-            case 'openrouter':
-              // openRouterStatTokenizers(maybeModels);
-              return maybeModels
-                .sort(openRouterModelFamilySortFn)
-                .map(openRouterModelToModelDescription)
-                .filter(desc => !!desc)
-                .reduce(openRouterInjectVariants, [] as ModelDescriptionSchema[]);
+  geminiDevCheckForParserMisses_DEV(wireModels, detailedModels);
+  geminiDevCheckForSuperfluousModels_DEV(detailedModels.map(model => model.name));
 
-            default:
-              const _exhaustiveCheck: never = dialect;
-              throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: `Unhandled dialect: ${dialect}` });
-          }
-        },
-      });
+  const filteredModels = detailedModels.filter(geminiFilterModels);
+  const models = filteredModels
+    .map(geminiModelToModelDescription)
+    .filter((model): model is ModelDescriptionSchema => !!model)
+    .sort(geminiSortModels);
 
-    default:
-      const _exhaustiveCheck: never = dialect;
-      throw new TRPCError({ code: 'INTERNAL_SERVER_ERROR', message: `Unsupported dialect: ${dialect}` });
-  }
+  return geminiModelsAddVariants(models);
 }

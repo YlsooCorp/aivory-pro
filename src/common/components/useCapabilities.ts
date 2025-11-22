@@ -50,7 +50,7 @@ export interface TextToImageProvider {
   configured: boolean;
 }
 
-type TextToImageVendor = Extract<ModelVendorId, 'azure' | 'openai' | 'localai' | 'googleai' | 'xai'>;
+type TextToImageVendor = Extract<ModelVendorId, 'googleai'>;
 
 export interface CapabilityTextToImage {
   mayWork: boolean;
